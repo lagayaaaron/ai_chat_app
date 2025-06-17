@@ -1,0 +1,40 @@
+<h1>AI Chatbox</h1>
+<div id="chatbox">
+  <div id="messages"></div>
+  <form id="chat-form">
+    <input type="text" id="message-input" placeholder="Ask me anything..." required>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("chat-form");
+    const input = document.getElementById("message-input");
+    const messages = document.getElementById("messages");
+    let csrf_token = document.head.querySelector('meta[name="csrf-token"]').getAttribute('content')
+
+    console.log("CSRF Token:", csrf_token);
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const message = input.value;
+      messages.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+      input.value = "";
+
+      const response = await fetch("/chats", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "X-CSRF-Token": csrf_token
+        },
+        body: JSON.stringify({ message: message })
+      });
+
+      const data = await response.json();
+      messages.innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+    });
+  });
+</script>
+
