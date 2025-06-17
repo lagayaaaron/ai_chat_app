@@ -71,7 +71,7 @@ gem "byebug", platforms: %i[ mri ]
 gem "nokogiri"
 
 ## Jobs
-gem "sidekiq", "~> 7.2.1"  # or latest stable version
+gem "sidekiq", "~> 8.0.4"  # or latest stable version
 gem "sidekiq-failures"
 
 # gem "pry-rails"
