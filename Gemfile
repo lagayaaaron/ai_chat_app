@@ -64,7 +64,7 @@ end
 
 gem "openai"
 gem "ruby-openai", require: "openai"
-gem "pinecone", "~> 0.1.71"
+gem "pinecone", "~> 1.1.0"
 gem "csv"
 gem "dotenv-rails"
 gem "byebug", platforms: %i[ mri ]

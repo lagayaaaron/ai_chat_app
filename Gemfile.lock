@@ -137,7 +137,7 @@ GEM
       dry-types (>= 1.7, < 2)
       ice_nine (~> 0.11)
       zeitwerk (~> 2.6)
-    dry-types (1.8.2)
+    dry-types (1.8.3)
       bigdecimal (~> 3.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 1.0)
@@ -169,7 +169,8 @@ GEM
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    httparty (0.21.0)
+    httparty (0.22.0)
+      csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     i18n (1.14.7)
@@ -259,10 +260,10 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
-    pinecone (0.1.71)
+    pinecone (1.1.0)
       dry-struct (~> 1.6.0)
       dry-validation (~> 1.10.0)
-      httparty (~> 0.21.0)
+      httparty (~> 0.22.0)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -459,7 +460,7 @@ DEPENDENCIES
   nokogiri
   openai
   pg (~> 1.1)
-  pinecone (~> 0.1.71)
+  pinecone (~> 1.1.0)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
