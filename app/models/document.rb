@@ -1,5 +1,5 @@
 class Document < ApplicationRecord
-  validates :issuance_no, presence: true, uniqueness: true
+  # validates :issuance_no, presence: true, uniqueness: true
   validates :content, presence: true
 
   after_save :enqueue_embedding_job

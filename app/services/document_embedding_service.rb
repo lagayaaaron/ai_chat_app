@@ -52,7 +52,7 @@ class DocumentEmbeddingService
   private
 
   def generate_chunk_id(index)
-    "#{@document.sgid}_#{index}"
+    "#{@document.to_sgid}_#{index}"
   end
 
   def delete_existing_chunks
